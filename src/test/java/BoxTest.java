@@ -6,19 +6,9 @@ class BoxTest {
 
     @Test
     public void testBox() {
-        Box box1 = new Box(20);
-        Box box2 = new Box(10);
-        box2.setObject("any");
-        int expected = 20;
-        int n1 = 0;
-        int n2 = 0;
-        if(box1.getObject() instanceof Integer) {
-            n1 = (int) box1.getObject();
-        }
-        if(box2.getObject() instanceof Integer) {
-            n2 = (int) box2.getObject();
-        }
-        int result = n1 + n2;
-        assertEquals(expected, result);
+        Box<String, Integer, Float> box1 = new Box<>("string", 2,3.5f);
+        Box<String, Integer, Float> box2 = new Box<>("string", 5,6.5f);
+        float result = box1.getValue() + box2.getValue() + box1.getValue2() + box2.getValue2();
+        assertEquals(17, result,0.01);
     }
 }
