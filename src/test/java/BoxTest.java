@@ -6,9 +6,8 @@ class BoxTest {
 
     @Test
     public void testBox() {
-        Box<String, Integer, Float> box1 = new Box<>("string", 2,3.5f);
-        Box<String, Integer, Float> box2 = new Box<>("string", 5,6.5f);
-        float result = box1.getValue() + box2.getValue() + box1.getValue2() + box2.getValue2();
-        assertEquals(17, result,0.01);
+        Box<Integer> box1 = new Box<>(5,10,15);
+        Box<Float> box2 = new Box<>(5f,10f,15f);
+        assertEquals(0, box1.compare(box2));
     }
 }
